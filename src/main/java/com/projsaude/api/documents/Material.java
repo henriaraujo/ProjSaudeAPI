@@ -2,11 +2,13 @@ package com.projsaude.api.documents;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document
 public class Material {
 
 	@Id
-	private Integer id;
+	private String id;
 	private String nome;
 	private String marca;
 	private String tamanho;
@@ -15,11 +17,11 @@ public class Material {
 		
 	}
 
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
