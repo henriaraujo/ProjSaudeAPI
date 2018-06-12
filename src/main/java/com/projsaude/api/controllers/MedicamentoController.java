@@ -17,57 +17,57 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.projsaude.api.documents.Material;
+import com.projsaude.api.documents.Medicamento;
 import com.projsaude.api.responses.Response;
-import com.projsaude.api.services.MaterialService;
+import com.projsaude.api.services.MedicamentoService;
 
 
 @RestController
-@RequestMapping(path = "/api/materiais")
-public class MaterialController {
+@RequestMapping(path = "/api/medicamentos")
+public class MedicamentoController {
 
 	@Autowired
-	private MaterialService materialService;
+	private MedicamentoService medicamentoService;
 	
 	@GetMapping
-	public ResponseEntity<Response<List<Material>>> listarTodos()
+	public ResponseEntity<Response<List<Medicamento>>> listarTodos()
 	{
-		return ResponseEntity.ok(new Response<List<Material>>(this.materialService.listarTodos()));
+		return ResponseEntity.ok(new Response<List<Medicamento>>(this.medicamentoService.listarTodos()));
 	}
 	
 	@GetMapping(path = "/{id}")
-	public ResponseEntity<Response<Material>> listarPorId(@PathVariable(name = "id") String id)
+	public ResponseEntity<Response<Medicamento>> listarPorId(@PathVariable(name = "id") String id)
 	{
-		return ResponseEntity.ok(new Response<Material>(this.materialService.listarPorId(id)));
+		return ResponseEntity.ok(new Response<Medicamento>(this.medicamentoService.listarPorId(id)));
 	}
 	
 	@PostMapping
-	public ResponseEntity<Response<Material>> cadastrar(@Valid @RequestBody Material material, BindingResult result)
+	public ResponseEntity<Response<Medicamento>> cadastrar(@Valid @RequestBody Medicamento medicamento, BindingResult result)
 	{
 		if(result.hasErrors()) {
 			List<String> erros = new ArrayList<String>();
 			result.getAllErrors().forEach(erro -> erros.add(erro.getDefaultMessage()));
-			return ResponseEntity.badRequest().body(new Response<Material>(erros));
+			return ResponseEntity.badRequest().body(new Response<Medicamento>(erros));
 		}
-		return ResponseEntity.ok(new Response<Material>(this.materialService.cadastrar(material)));
+		return ResponseEntity.ok(new Response<Medicamento>(this.medicamentoService.cadastrar(medicamento)));
 	}
 	
 	@PutMapping(path = "/{id}")
-	public ResponseEntity<Response<Material>> atualizar(@PathVariable(name = "id") String id,@RequestBody Material material, BindingResult result)
+	public ResponseEntity<Response<Medicamento>> atualizar(@PathVariable(name = "id") String id,@RequestBody Medicamento medicamento, BindingResult result)
 	{
 		if(result.hasErrors()) {
 			List<String> erros = new ArrayList<String>();
 			result.getAllErrors().forEach(erro -> erros.add(erro.getDefaultMessage()));
-			return ResponseEntity.badRequest().body(new Response<Material>(erros));
+			return ResponseEntity.badRequest().body(new Response<Medicamento>(erros));
 		}
-		material.setId(id);
-		return ResponseEntity.ok(new Response<Material>(this.materialService.atualizar(material)));
+		medicamento.setId(id);
+		return ResponseEntity.ok(new Response<Medicamento>(this.medicamentoService.atualizar(medicamento)));
 	}
 	
 	@DeleteMapping(path = "/{id}")
 	public ResponseEntity<Response<Integer>> remover(@PathVariable(name = "id") String id)
 	{
-		this.materialService.remover(id);
+		this.medicamentoService.remover(id);
 		return ResponseEntity.ok(new Response<Integer>(1));
 	}
 }

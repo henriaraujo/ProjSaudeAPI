@@ -2,13 +2,13 @@ package com.projsaude.api.services;
 
 import java.util.List;
 
-import com.projsaude.api.documents.Material;
+import com.projsaude.api.documents.Medicamento;
 
-public interface MaterialService {
+public interface MedicamentoService {
 
-	List<Material> listarTodos();
-	Material listarPorId (String id);
-	Material cadastrar (Material material);
-	Material atualizar (Material material);
+	List<Medicamento> listarTodos();
+	Medicamento listarPorId (String id);
+	Medicamento cadastrar (Medicamento medicamento);
+	Medicamento atualizar (Medicamento medicamento);
 	void remover (String id);
 }

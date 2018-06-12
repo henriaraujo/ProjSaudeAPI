@@ -3,40 +3,40 @@ package com.projsaude.api.services.impl;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.projsaude.api.documents.Material;
-import com.projsaude.api.repositories.MaterialRepository;
+import com.projsaude.api.documents.Medicamento;
+import com.projsaude.api.repositories.MedicamentoRepository;
 
-import com.projsaude.api.services.MaterialService;
+import com.projsaude.api.services.MedicamentoService;
 
 @Service
-public class MaterialServiceImpl implements MaterialService {
+public class MedicamentoServiceImpl implements MedicamentoService {
 
 	@Autowired
-	private MaterialRepository materialRepository;
+	private MedicamentoRepository medicamentoRepository;
 	
 	@Override
-	public List<Material> listarTodos() {
-		return this.materialRepository.findAll();
+	public List<Medicamento> listarTodos() {
+		return this.medicamentoRepository.findAll();
 	}
 
 	@Override
-	public Material listarPorId(String id) {
-		return this.materialRepository.findOne(id);
+	public Medicamento listarPorId(String id) {
+		return this.medicamentoRepository.findOne(id);
 	}
 
 	@Override
-	public Material cadastrar(Material material) {
-		return this.materialRepository.save(material);
+	public Medicamento cadastrar(Medicamento medicamento) {
+		return this.medicamentoRepository.save(medicamento);
 	}
 
 	@Override
-	public Material atualizar(Material material) {
-		return this.materialRepository.save(material);
+	public Medicamento atualizar(Medicamento medicamento) {
+		return this.medicamentoRepository.save(medicamento);
 	}
 
 	@Override
 	public void remover(String id) {
-		this.materialRepository.delete(id);
+		this.medicamentoRepository.delete(id);
 	}
 
 }

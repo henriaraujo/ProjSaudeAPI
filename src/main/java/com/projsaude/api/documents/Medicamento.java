@@ -5,15 +5,16 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class Material {
+public class Medicamento {
 
 	@Id
 	private String id;
 	private String nome;
-	private String marca;
-	private String tamanho;
+	private String nomeGenerico;
+	private String concentracaoOuComposicao;
+	private String formaFarmaceutica;
 	
-	public Material () {
+	public Medicamento () {
 		
 	}
 
@@ -25,7 +26,6 @@ public class Material {
 		this.id = id;
 	}
 
-	
 	@NotEmpty(message = "O nome não pode ser vazio")
 	public String getNome() {
 		return nome;
@@ -35,23 +35,31 @@ public class Material {
 		this.nome = nome;
 	}
 
-	@NotEmpty(message = "A marca não pode ser vazia")
-	public String getMarca() {
-		return marca;
+	@NotEmpty(message = "O nome genérico não pode ser vazio")
+	public String getNomeGenerico() {
+		return nomeGenerico;
 	}
 
-	public void setMarca(String marca) {
-		this.marca = marca;
+	public void setNomeGenerico(String nomeGenerico) {
+		this.nomeGenerico = nomeGenerico;
 	}
 
-	@NotEmpty(message = "O tamanho não pode ser vazia")
-	public String getTamanho() {
-		return tamanho;
+
+	public String getConcetracaoOuComposicao() {
+		return concentracaoOuComposicao;
 	}
 
-	public void setTamanho(String tamanho) {
-		this.tamanho = tamanho;
+	public void setConcetracaoOuComposicao(String concentracaoOuComposicao) {
+		this.concentracaoOuComposicao = concentracaoOuComposicao;
 	}
-	
+
+	@NotEmpty(message = "A forma farmacêutica não pode ser vazia")
+	public String getFormaFarmaceutica() {
+		return formaFarmaceutica;
+	}
+
+	public void setFormaFarmaceutica(String formaFarmaceutica) {
+		this.formaFarmaceutica = formaFarmaceutica;
+	}
 	
 }
