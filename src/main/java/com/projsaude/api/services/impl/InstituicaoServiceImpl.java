@@ -3,40 +3,40 @@ package com.projsaude.api.services.impl;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.projsaude.api.documents.Material;
-import com.projsaude.api.repositories.MaterialRepository;
+import com.projsaude.api.documents.Instituicao;
+import com.projsaude.api.repositories.InstituicaoRepository;
 
-import com.projsaude.api.services.MaterialService;
+import com.projsaude.api.services.InstituicaoService;
 
 @Service
-public class MaterialServiceImpl implements MaterialService {
+public class InstituicaoServiceImpl implements InstituicaoService {
 
 	@Autowired
-	private MaterialRepository materialRepository;
+	private InstituicaoRepository instituicaoRepository;
 	
 	@Override
-	public List<Material> listarTodos() {
-		return this.materialRepository.findAll();
+	public List<Instituicao> listarTodos() {
+		return this.instituicaoRepository.findAll();
 	}
 
 	@Override
-	public Material listarPorId(String id) {
-		return this.materialRepository.findOne(id);
+	public Instituicao listarPorId(String id) {
+		return this.instituicaoRepository.findOne(id);
 	}
 
 	@Override
-	public Material cadastrar(Material material) {
-		return this.materialRepository.save(material);
+	public Instituicao cadastrar(Instituicao instituicao) {
+		return this.instituicaoRepository.save(instituicao);
 	}
 
 	@Override
-	public Material atualizar(Material material) {
-		return this.materialRepository.save(material);
+	public Instituicao atualizar(Instituicao instituicao) {
+		return this.instituicaoRepository.save(instituicao);
 	}
 
 	@Override
 	public void remover(String id) {
-		this.materialRepository.delete(id);
+		this.instituicaoRepository.delete(id);
 	}
 
 }
