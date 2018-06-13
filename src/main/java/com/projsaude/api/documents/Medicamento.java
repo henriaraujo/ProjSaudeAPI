@@ -45,6 +45,7 @@ public class Medicamento {
 	}
 
 
+	@NotEmpty
 	public String getConcetracaoOuComposicao() {
 		return concentracaoOuComposicao;
 	}
