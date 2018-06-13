@@ -1,6 +1,7 @@
 package com.projsaude.api.documents;
 
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -46,6 +47,7 @@ public class Instituicao {
 		this.id = id;
 	}
 
+	@NotEmpty
 	public String getLongitude() {
 		return longitude;
 	}
@@ -54,6 +56,7 @@ public class Instituicao {
 		this.longitude = longitude;
 	}
 
+	@NotEmpty
 	public String getLatitude() {
 		return latitude;
 	}
@@ -62,6 +65,7 @@ public class Instituicao {
 		this.latitude = latitude;
 	}
 
+	@NotEmpty
 	public String getSetorCensitario() {
 		return setorCensitario;
 	}
@@ -70,6 +74,7 @@ public class Instituicao {
 		this.setorCensitario = setorCensitario;
 	}
 
+	@NotEmpty
 	public String getAreaDePoderacao() {
 		return areaDePoderacao;
 	}
@@ -78,6 +83,7 @@ public class Instituicao {
 		this.areaDePoderacao = areaDePoderacao;
 	}
 
+	@NotEmpty
 	public String getCodDistritoIbge() {
 		return codDistritoIbge;
 	}
@@ -86,6 +92,7 @@ public class Instituicao {
 		this.codDistritoIbge = codDistritoIbge;
 	}
 
+	@NotEmpty
 	public String getDistritoMunicipal() {
 		return distritoMunicipal;
 	}
@@ -94,6 +101,7 @@ public class Instituicao {
 		this.distritoMunicipal = distritoMunicipal;
 	}
 
+	@NotEmpty
 	public String getCodSubprefeitura() {
 		return CodSubprefeitura;
 	}
@@ -102,6 +110,7 @@ public class Instituicao {
 		CodSubprefeitura = codSubprefeitura;
 	}
 
+	@NotEmpty
 	public String getSubprefeitura() {
 		return Subprefeitura;
 	}
@@ -110,6 +119,7 @@ public class Instituicao {
 		Subprefeitura = subprefeitura;
 	}
 
+	@NotEmpty
 	public String getRegiao5() {
 		return regiao5;
 	}
@@ -118,6 +128,7 @@ public class Instituicao {
 		this.regiao5 = regiao5;
 	}
 
+	@NotEmpty
 	public String getRegiao8() {
 		return regiao8;
 	}
@@ -126,6 +137,7 @@ public class Instituicao {
 		this.regiao8 = regiao8;
 	}
 
+	@NotEmpty
 	public String getEstabelecimentoSaude() {
 		return estabelecimentoSaude;
 	}
@@ -134,6 +146,7 @@ public class Instituicao {
 		this.estabelecimentoSaude = estabelecimentoSaude;
 	}
 
+	@NotEmpty
 	public String getEndereco() {
 		return endereco;
 	}
@@ -142,6 +155,7 @@ public class Instituicao {
 		this.endereco = endereco;
 	}
 
+	@NotEmpty
 	public String getBairro() {
 		return bairro;
 	}
@@ -150,6 +164,7 @@ public class Instituicao {
 		this.bairro = bairro;
 	}
 
+	@NotEmpty
 	public String getTelefone() {
 		return telefone;
 	}
@@ -158,6 +173,7 @@ public class Instituicao {
 		this.telefone = telefone;
 	}
 
+	@NotEmpty
 	public String getCep() {
 		return cep;
 	}
@@ -166,6 +182,7 @@ public class Instituicao {
 		this.cep = cep;
 	}
 
+	@NotEmpty
 	public String getMinSaudeOuCnes() {
 		return minSaudeOuCnes;
 	}
@@ -174,6 +191,7 @@ public class Instituicao {
 		this.minSaudeOuCnes = minSaudeOuCnes;
 	}
 
+	@NotEmpty
 	public String getCodDependenciaAdministrativa() {
 		return codDependenciaAdministrativa;
 	}
@@ -182,6 +200,7 @@ public class Instituicao {
 		this.codDependenciaAdministrativa = codDependenciaAdministrativa;
 	}
 
+	@NotEmpty
 	public String getDependenciaAdministrativa() {
 		return dependenciaAdministrativa;
 	}
@@ -190,6 +209,7 @@ public class Instituicao {
 		this.dependenciaAdministrativa = dependenciaAdministrativa;
 	}
 
+	@NotEmpty
 	public String getCodTipoEstabelecimento() {
 		return codTipoEstabelecimento;
 	}
@@ -198,6 +218,7 @@ public class Instituicao {
 		this.codTipoEstabelecimento = codTipoEstabelecimento;
 	}
 
+	@NotEmpty
 	public String getTipoEstabelecimento() {
 		return tipoEstabelecimento;
 	}
@@ -206,6 +227,7 @@ public class Instituicao {
 		this.tipoEstabelecimento = tipoEstabelecimento;
 	}
 
+	@NotEmpty
 	public String getCodClasseTiposEstabelecimentosSaude() {
 		return CodClasseTiposEstabelecimentosSaude;
 	}
@@ -214,6 +236,7 @@ public class Instituicao {
 		CodClasseTiposEstabelecimentosSaude = codClasseTiposEstabelecimentosSaude;
 	}
 
+	@NotEmpty
 	public String getClasseClasseTiposEstabelecimentosSaude() {
 		return ClasseClasseTiposEstabelecimentosSaude;
 	}
@@ -222,6 +245,7 @@ public class Instituicao {
 		ClasseClasseTiposEstabelecimentosSaude = classeClasseTiposEstabelecimentosSaude;
 	}
 
+	@NotEmpty
 	public String getLeitosHospitalares() {
 		return leitosHospitalares;
 	}
