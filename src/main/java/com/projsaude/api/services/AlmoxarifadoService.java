@@ -2,13 +2,13 @@ package com.projsaude.api.services;
 
 import java.util.List;
 
-import com.projsaude.api.documents.Material;
+import com.projsaude.api.documents.Almoxarifado;
 
-public interface MaterialService {
+public interface AlmoxarifadoService {
 
-	List<Material> listarTodos();
-	Material listarPorId (String id);
-	Material cadastrar (Material material);
-	Material atualizar (Material material);
+	List<Almoxarifado> listarTodos();
+	Almoxarifado listarPorId (String id);
+	Almoxarifado cadastrar (Almoxarifado almoxarifado);
+	Almoxarifado atualizar (Almoxarifado almoxarifado);
 	void remover (String id);
 }

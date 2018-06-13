@@ -3,40 +3,40 @@ package com.projsaude.api.services.impl;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.projsaude.api.documents.Material;
-import com.projsaude.api.repositories.MaterialRepository;
+import com.projsaude.api.documents.Almoxarifado;
+import com.projsaude.api.repositories.AlmoxarifadoRepository;
 
-import com.projsaude.api.services.MaterialService;
+import com.projsaude.api.services.AlmoxarifadoService;
 
 @Service
-public class MaterialServiceImpl implements MaterialService {
+public class AlmoxarifadoServiceImpl implements AlmoxarifadoService {
 
 	@Autowired
-	private MaterialRepository materialRepository;
+	private AlmoxarifadoRepository almoxarifadoRepository;
 	
 	@Override
-	public List<Material> listarTodos() {
-		return this.materialRepository.findAll();
+	public List<Almoxarifado> listarTodos() {
+		return this.almoxarifadoRepository.findAll();
 	}
 
 	@Override
-	public Material listarPorId(String id) {
-		return this.materialRepository.findOne(id);
+	public Almoxarifado listarPorId(String id) {
+		return this.almoxarifadoRepository.findOne(id);
 	}
 
 	@Override
-	public Material cadastrar(Material material) {
-		return this.materialRepository.save(material);
+	public Almoxarifado cadastrar(Almoxarifado almoxarifado) {
+		return this.almoxarifadoRepository.save(almoxarifado);
 	}
 
 	@Override
-	public Material atualizar(Material material) {
-		return this.materialRepository.save(material);
+	public Almoxarifado atualizar(Almoxarifado almoxarifado) {
+		return this.almoxarifadoRepository.save(almoxarifado);
 	}
 
 	@Override
 	public void remover(String id) {
-		this.materialRepository.delete(id);
+		this.almoxarifadoRepository.delete(id);
 	}
 
 }
