@@ -2,13 +2,13 @@ package com.projsaude.api.services;
 
 import java.util.List;
 
-import com.projsaude.api.documents.Material;
+import com.projsaude.api.documents.Estoque;
 
-public interface MaterialService {
+public interface EstoqueService {
 
-	List<Material> listarTodos();
-	Material listarPorId (String id);
-	Material cadastrar (Material material);
-	Material atualizar (Material material);
+	List<Estoque> listarTodos();
+	Estoque listarPorId (String id);
+	Estoque cadastrar (Estoque estoque);
+	Estoque atualizar (Estoque estoque);
 	void remover (String id);
 }

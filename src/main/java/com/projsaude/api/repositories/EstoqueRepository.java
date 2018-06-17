@@ -1,8 +1,8 @@
 package com.projsaude.api.repositories;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
-import com.projsaude.api.documents.Material;
+import com.projsaude.api.documents.Estoque;
 
-public interface  MaterialRepository extends  MongoRepository <Material, String>{
+public interface  EstoqueRepository extends  MongoRepository <Estoque, String>{
 
 }

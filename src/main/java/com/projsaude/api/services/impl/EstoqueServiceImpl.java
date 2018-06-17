@@ -3,40 +3,40 @@ package com.projsaude.api.services.impl;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.projsaude.api.documents.Material;
-import com.projsaude.api.repositories.MaterialRepository;
+import com.projsaude.api.documents.Estoque;
+import com.projsaude.api.repositories.EstoqueRepository;
 
-import com.projsaude.api.services.MaterialService;
+import com.projsaude.api.services.EstoqueService;
 
 @Service
-public class MaterialServiceImpl implements MaterialService {
+public class EstoqueServiceImpl implements EstoqueService {
 
 	@Autowired
-	private MaterialRepository materialRepository;
+	private EstoqueRepository estoqueRepository;
 	
 	@Override
-	public List<Material> listarTodos() {
-		return this.materialRepository.findAll();
+	public List<Estoque> listarTodos() {
+		return this.estoqueRepository.findAll();
 	}
 
 	@Override
-	public Material listarPorId(String id) {
-		return this.materialRepository.findOne(id);
+	public Estoque listarPorId(String id) {
+		return this.estoqueRepository.findOne(id);
 	}
 
 	@Override
-	public Material cadastrar(Material material) {
-		return this.materialRepository.save(material);
+	public Estoque cadastrar(Estoque estoque) {
+		return this.estoqueRepository.save(estoque);
 	}
 
 	@Override
-	public Material atualizar(Material material) {
-		return this.materialRepository.save(material);
+	public Estoque atualizar(Estoque estoque) {
+		return this.estoqueRepository.save(estoque);
 	}
 
 	@Override
 	public void remover(String id) {
-		this.materialRepository.delete(id);
+		this.estoqueRepository.delete(id);
 	}
 
 }

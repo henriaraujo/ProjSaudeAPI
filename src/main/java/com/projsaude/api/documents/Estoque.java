@@ -5,15 +5,15 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class Material {
+public class Estoque {
 
 	@Id
 	private String id;
+	private String tipoInsumo;
 	private String nome;
-	private String marca;
-	private String tamanho;
+	private String quantide;
 	
-	public Material () {
+	public Estoque () {
 		
 	}
 
@@ -25,8 +25,16 @@ public class Material {
 		this.id = id;
 	}
 
-	
-	@NotEmpty(message = "O nome não pode ser vazio")
+	@NotEmpty
+	public String getTipoInsumo() {
+		return tipoInsumo;
+	}
+
+	public void setTipoInsumo(String tipoInsumo) {
+		this.tipoInsumo = tipoInsumo;
+	}
+
+	@NotEmpty
 	public String getNome() {
 		return nome;
 	}
@@ -35,23 +43,16 @@ public class Material {
 		this.nome = nome;
 	}
 
-	@NotEmpty(message = "A marca não pode ser vazia")
-	public String getMarca() {
-		return marca;
+	@NotEmpty
+	public String getQuantide() {
+		return quantide;
 	}
 
-	public void setMarca(String marca) {
-		this.marca = marca;
+	public void setQuantide(String quantide) {
+		this.quantide = quantide;
 	}
 
-	@NotEmpty(message = "O tamanho não pode ser vazia")
-	public String getTamanho() {
-		return tamanho;
-	}
-
-	public void setTamanho(String tamanho) {
-		this.tamanho = tamanho;
-	}
+	
 	
 	
 }
