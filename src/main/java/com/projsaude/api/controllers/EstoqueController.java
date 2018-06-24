@@ -60,7 +60,7 @@ public class EstoqueController {
 			result.getAllErrors().forEach(erro -> erros.add(erro.getDefaultMessage()));
 			return ResponseEntity.badRequest().body(new Response<Estoque>(erros));
 		}
-		estoque.setId(id);
+		estoque.setIdMaterialOuMedicamento(id);
 		return ResponseEntity.ok(new Response<Estoque>(this.estoqueService.atualizar(estoque)));
 	}
 	
