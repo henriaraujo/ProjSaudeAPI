@@ -20,6 +20,7 @@ public class Almoxarifado {
 	private String idInstituicaoAssociada;
 	private String longetude;
 	private String latitude;
+	private String categoria;
 	
 	public Almoxarifado () {
 		
@@ -123,7 +124,14 @@ public class Almoxarifado {
 		this.latitude = latitude;
 	}
 
-	
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
 	
 	
 	
