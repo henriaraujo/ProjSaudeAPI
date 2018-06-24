@@ -8,51 +8,38 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Estoque {
 
 	@Id
-	private String id;
-	private String tipoInsumo;
-	private String nome;
-	private String quantide;
+	private String idMaterialOuMedicamento;
+	private String idAlmoxarifado;
+	private String quantidade;
 	
 	public Estoque () {
 		
 	}
 
-	public String getId() {
-		return id;
+	public String getIdMaterialOuMedicamento() {
+		return idMaterialOuMedicamento;
 	}
 
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	@NotEmpty
-	public String getTipoInsumo() {
-		return tipoInsumo;
-	}
-
-	public void setTipoInsumo(String tipoInsumo) {
-		this.tipoInsumo = tipoInsumo;
+	public void setIdMaterialOuMedicamento(String idMaterialOuMedicamento) {
+		this.idMaterialOuMedicamento = idMaterialOuMedicamento;
 	}
 
 	@NotEmpty
-	public String getNome() {
-		return nome;
+	public String getIdAlmoxarifado() {
+		return idAlmoxarifado;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setIdAlmoxarifado(String idAlmoxarifado) {
+		this.idAlmoxarifado = idAlmoxarifado;
 	}
 
 	@NotEmpty
-	public String getQuantide() {
-		return quantide;
+	public String getQuantidade() {
+		return quantidade;
 	}
 
-	public void setQuantide(String quantide) {
-		this.quantide = quantide;
+	public void setQuantidade(String quantidade) {
+		this.quantidade = quantidade;
 	}
-
-	
-	
 	
 }
