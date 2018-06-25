@@ -17,57 +17,57 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.projsaude.api.documents.Estoque;
+import com.projsaude.api.documents.EstoqueMaterial;
 import com.projsaude.api.responses.Response;
-import com.projsaude.api.services.EstoqueService;
+import com.projsaude.api.services.EstoqueMaterialService;
 
 
 @RestController
-@RequestMapping(path = "/api/estoque")
-public class EstoqueController {
+@RequestMapping(path = "/api/estoqueMaterial")
+public class EstoqueMaterialController {
 
 	@Autowired
-	private EstoqueService estoqueService;
+	private EstoqueMaterialService estoqueMaterialService;
 	
 	@GetMapping
-	public ResponseEntity<Response<List<Estoque>>> listarTodos()
+	public ResponseEntity<Response<List<EstoqueMaterial>>> listarTodos()
 	{
-		return ResponseEntity.ok(new Response<List<Estoque>>(this.estoqueService.listarTodos()));
+		return ResponseEntity.ok(new Response<List<EstoqueMaterial>>(this.estoqueMaterialService.listarTodos()));
 	}
 	
 	@GetMapping(path = "/{id}")
-	public ResponseEntity<Response<Estoque>> listarPorId(@PathVariable(name = "id") String id)
+	public ResponseEntity<Response<EstoqueMaterial>> listarPorId(@PathVariable(name = "id") String id)
 	{
-		return ResponseEntity.ok(new Response<Estoque>(this.estoqueService.listarPorId(id)));
+		return ResponseEntity.ok(new Response<EstoqueMaterial>(this.estoqueMaterialService.listarPorId(id)));
 	}
 	
 	@PostMapping
-	public ResponseEntity<Response<Estoque>> cadastrar(@Valid @RequestBody Estoque estoque, BindingResult result)
+	public ResponseEntity<Response<EstoqueMaterial>> cadastrar(@Valid @RequestBody EstoqueMaterial estoqueMaterialMaterial, BindingResult result)
 	{
 		if(result.hasErrors()) {
 			List<String> erros = new ArrayList<String>();
 			result.getAllErrors().forEach(erro -> erros.add(erro.getDefaultMessage()));
-			return ResponseEntity.badRequest().body(new Response<Estoque>(erros));
+			return ResponseEntity.badRequest().body(new Response<EstoqueMaterial>(erros));
 		}
-		return ResponseEntity.ok(new Response<Estoque>(this.estoqueService.cadastrar(estoque)));
+		return ResponseEntity.ok(new Response<EstoqueMaterial>(this.estoqueMaterialService.cadastrar(estoqueMaterialMaterial)));
 	}
 	
 	@PutMapping(path = "/{id}")
-	public ResponseEntity<Response<Estoque>> atualizar(@PathVariable(name = "id") String id,@RequestBody Estoque estoque, BindingResult result)
+	public ResponseEntity<Response<EstoqueMaterial>> atualizar(@PathVariable(name = "id") String id,@RequestBody EstoqueMaterial estoqueMaterial, BindingResult result)
 	{
 		if(result.hasErrors()) {
 			List<String> erros = new ArrayList<String>();
 			result.getAllErrors().forEach(erro -> erros.add(erro.getDefaultMessage()));
-			return ResponseEntity.badRequest().body(new Response<Estoque>(erros));
+			return ResponseEntity.badRequest().body(new Response<EstoqueMaterial>(erros));
 		}
-		estoque.setIdMaterialOuMedicamento(id);
-		return ResponseEntity.ok(new Response<Estoque>(this.estoqueService.atualizar(estoque)));
+		estoqueMaterial.setId(id);
+		return ResponseEntity.ok(new Response<EstoqueMaterial>(this.estoqueMaterialService.atualizar(estoqueMaterial)));
 	}
 	
 	@DeleteMapping(path = "/{id}")
 	public ResponseEntity<Response<Integer>> remover(@PathVariable(name = "id") String id)
 	{
-		this.estoqueService.remover(id);
+		this.estoqueMaterialService.remover(id);
 		return ResponseEntity.ok(new Response<Integer>(1));
 	}
 }

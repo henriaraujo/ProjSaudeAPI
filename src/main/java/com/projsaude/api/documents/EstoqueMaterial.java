@@ -1,30 +1,37 @@
 package com.projsaude.api.documents;
 
-import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class Estoque {
+public class EstoqueMaterial {
 
 	@Id
-	private String idMaterialOuMedicamento;
+	private String id;
+	private String idMaterial;
 	private String idAlmoxarifado;
 	private String quantidade;
 	
-	public Estoque () {
+	public EstoqueMaterial () {
 		
 	}
 
-	public String getIdMaterialOuMedicamento() {
-		return idMaterialOuMedicamento;
+	public String getId() {
+		return id;
 	}
 
-	public void setIdMaterialOuMedicamento(String idMaterialOuMedicamento) {
-		this.idMaterialOuMedicamento = idMaterialOuMedicamento;
+	public void setId(String id) {
+		this.id = id;
 	}
 
-	@NotEmpty
+	public String getIdMaterial() {
+		return idMaterial;
+	}
+
+	public void setIdMaterial(String idMaterial) {
+		this.idMaterial = idMaterial;
+	}
+
 	public String getIdAlmoxarifado() {
 		return idAlmoxarifado;
 	}
@@ -33,7 +40,6 @@ public class Estoque {
 		this.idAlmoxarifado = idAlmoxarifado;
 	}
 
-	@NotEmpty
 	public String getQuantidade() {
 		return quantidade;
 	}
@@ -41,5 +47,7 @@ public class Estoque {
 	public void setQuantidade(String quantidade) {
 		this.quantidade = quantidade;
 	}
+
+
 	
 }
