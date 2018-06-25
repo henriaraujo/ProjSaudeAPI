@@ -23,7 +23,7 @@ import com.projsaude.api.services.EstoqueMaterialService;
 
 
 @RestController
-@RequestMapping(path = "/api/estoqueMaterial")
+@RequestMapping(path = "/api/estoqueMateriais")
 public class EstoqueMaterialController {
 
 	@Autowired
